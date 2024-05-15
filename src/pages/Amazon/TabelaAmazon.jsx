@@ -37,6 +37,11 @@ function CardAmazon() {
         }
     };
 
+    const formatarData = (data) => {
+        const dataObj = new Date(data);
+        return dataObj.toLocaleDateString('pt-BR');
+    };
+
     return (
         <div>
             <NavBar />
@@ -55,7 +60,7 @@ function CardAmazon() {
                             {livrosPaginados.map((livro) => (
                                 <tr key={livro.id_livro}>
                                     <td>{livro.id_livro}</td>
-                                    <td>{livro.data_venda}</td>
+                                    <td>{formatarData(livro.data_venda)}</td>
                                     <td>{livro.nome_produto}</td>
                                     <td>{livro.edicao}</td>
                                 </tr>
